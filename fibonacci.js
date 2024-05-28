@@ -1,4 +1,4 @@
-// This function generates the Fibonacci sequence up to the nth element starting from 0.
+// This function generates the Fibonacci sequence up to the nth element starting from 0, using loop.
 function fibs(n) {
   if (n === 0) return [0];
   if (n === 1) return [0, 1];
@@ -13,17 +13,19 @@ function fibs(n) {
   return fibonacciSequence;
 }
 
-// This function calculates the nth Fibonacci number starting from 0.
+console.log(fibs(8));
+
+// This function generates the Fibonacci sequence up to the nth element starting from 0, using recursion.
 function fibsRec(n, fibSequence = [0, 1]) {
-    if (fibSequence.length >= n) {
-      return fibSequence;
-    }
-  
-    fibSequence.push(
-      fibSequence[fibSequence.length - 1] + fibSequence[fibSequence.length - 2]
-    );
-  
-    return fibsRec(n, fibSequence);
+  if (fibSequence.length >= n) {
+    return fibSequence;
   }
-  
-  console.log(fibsRec(8));
+
+  fibSequence.push(
+    fibSequence[fibSequence.length - 1] + fibSequence[fibSequence.length - 2]
+  );
+
+  return fibsRec(n, fibSequence);
+}
+
+console.log(fibsRec(8));
